@@ -1,0 +1,32 @@
+/* From Uiverse.io by SelfMadeSystem */
+.container-label {
+	cursor: pointer;
+	width: 10px;
+	height: 10px;
+}
+
+.container-label input {
+	display: none;
+}
+
+.container-label svg {
+	overflow: visible;
+}
+
+.path {
+	fill: none;
+	stroke: rgb(255, 255, 255);
+	stroke-width: 6;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+	stroke-dasharray: 241 9999999;
+	stroke-dashoffset: 0;
+}
+
+.container-label input:checked ~ svg .path {
+	stroke-dasharray: 70.5096664428711 9999999;
+	stroke-dashoffset: -262.2723388671875;
+	stroke: #20b256;
+
+}
