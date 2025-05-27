@@ -28,6 +28,7 @@ import {
 	UsersRound,
 	CalendarCheck,
 	Search,
+	SearchIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -84,18 +85,19 @@ function SearchCommand({ showInput = true }: { showInput?: boolean }) {
 		return () => document.removeEventListener("keydown", down);
 	}, []);
 	return (
-		<div className="fixed sm:static top-3 right-4 z-20">
+		<div className="w-full">
 			{showInput && (
-				<div className="">
+				<div className=" p-3 m-auto">
 					<Button
 						onClick={() => setOpen(true)}
 						variant={"outline"}
-						className=" justify-between w-full hidden sm:flex"
+						className=" justify-between items-center w-full hidden sm:flex bg-transparent text-background"
 					>
-						<span className=" opacity-50 hover:opacity-100">
-							Search admin panel..
+						<SearchIcon size={20}/>
+						<span className=" opacity-50 hover:opacity-100 hidden sm:block">
+							Search
 						</span>
-						<p className="text-sm text-muted-foreground ml-3">
+						<p className="text-sm text-muted-foreground ml-3 hidden sm:block">
 							<kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 text-sm">
 								<span className="text-xs">⌘</span>K
 							</kbd>

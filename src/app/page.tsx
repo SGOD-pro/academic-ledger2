@@ -18,7 +18,7 @@ const SubjectTable = React.memo(
 );
 import { RootState } from "@/store";
 import { updateAdmissionNo, setAdmissionNo } from "@/store/slices";
-import SearchCommand from "@/components/SearchCommand";
+
 
 const apiService = new ApiService("/api/students/lastone");
 export default function Home() {
@@ -30,7 +30,6 @@ export default function Home() {
 		if (hydrated) return;
 		async function lastone() {
 			const response = await apiService.get<{ admissionNo: string }>("");
-
 			if (response.data) {
 				dispatch(updateAdmissionNo(response.data.admissionNo));
 			}
@@ -53,9 +52,6 @@ export default function Home() {
 				</div>
 			</section>
 			<section className=" overflow-auto space-y-3">
-				<Suspense fallback={<Skeleton className="w-full h-full" />}>
-					<SearchCommand />
-				</Suspense>
 				<Suspense fallback={<Skeleton className="w-full h-full" />}>
 					<NextBatch />
 				</Suspense>

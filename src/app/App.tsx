@@ -19,7 +19,7 @@ function App({ children }: { children: React.ReactNode }) {
 			});
 		}
 	}, []);
-	const { batches, isHydrated } = useSelector((state: RootState) => ({
+	const {  isHydrated } = useSelector((state: RootState) => ({
 		batches: state.Batches.allBatches,
 		isHydrated: state.Batches.isHydrated,
 	}));

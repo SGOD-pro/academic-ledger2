@@ -12,7 +12,7 @@ import {
 	Award,
 	ChevronRight,
 } from "lucide-react";
-
+import SearchCommand from "@/components/SearchCommand";
 const links = [
 	{
 		pathname: "Home",
@@ -77,6 +77,9 @@ function Navbar() {
 			>
 				<ChevronRight className="pointer-events-none"/>
 			</span>
+			<aside className=" fixed bottom-0 right-0 md:top-0 md:left-0 z-50">
+				<SearchCommand />
+			</aside>
 			<nav
 				className={`w-32 fixed h-screen top-0 left-0 ${
 					!show ? "-translate-x-full" : "-translate-x-0"
